@@ -1,10 +1,10 @@
 # server {
 #   listen 443 default_server ssl http2;
 #   listen [::]:443 ssl http2;
-#   server_name replace-with-your-website.com;
+#   server_name replace-with-your-domain.com;
     
-#   ssl_certificate /etc/nginx/ssl/live/replace-with-your-website.com/fullchain.pem;
-#   ssl_certificate_key /etc/nginx/ssl/live/replace-with-your-website.com/privkey.pem;
+#   ssl_certificate /etc/nginx/ssl/live/replace-with-your-domain.com/fullchain.pem;
+#   ssl_certificate_key /etc/nginx/ssl/live/replace-with-your-domain.com/privkey.pem;
 
 
 #   location @app {
@@ -39,7 +39,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name replace-with-your-website.com;
+    server_name replace-with-your-domain.com;
     server_tokens off;
 
     location /.well-known/acme-challenge/ {
@@ -47,6 +47,6 @@ server {
     }
 
     location / {
-        return 301 https://replace-with-your-website.com$request_uri;
+        return 301 https://replace-with-your-domain.com$request_uri;
     }
 }
