@@ -6,7 +6,7 @@
 ## Stepx
 1) replace the server_name in nginx/conf, line 42 with the required domain.
 2) docker-compose up -d
-3) run the command "docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d your-website.com"  , replacing your-website.com with your required domain.
+3) run the command "docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d your-website.com", replacing your-website.com with your required domain.
 4) Once the certificates are there, uncomment lines 1-36 in frontend.conf, replacing the server_name in line 4,7,8 with the required domain.
 5) docker-compose restart
 6) test if the certificate renewal works by running "docker-compose run --rm certbot renew --dry-run"
